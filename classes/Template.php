@@ -4,16 +4,12 @@ namespace classes;
 
 class Template {
 
-    private $header;
     private $file;
-    private $footer;
     
     private $param;
     
-    public function __construct($file, $header = '../app/Views/header.php', $footer = '../app/Views/footer.php'){
-        $this->header = $header;
+    public function __construct($file){
         $this->file = $file;
-        $this->footer = $footer;
     }
     
     public function setParam($arr){
@@ -21,9 +17,7 @@ class Template {
     }
     
     public function render(){
-        include($this->header);
-        include('../app/Views/' . $this->file);
-        include($this->footer);
+        include('app/Template/' . $this->file);
     }
     
     

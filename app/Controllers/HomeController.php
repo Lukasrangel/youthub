@@ -2,6 +2,7 @@
 
 namespace app\Controllers;
 
+use classes\Template;
 use classes\Youtube;
 
 class HomeController {
@@ -9,9 +10,11 @@ class HomeController {
 
     public function index() {
 
-      echo "index";
+      $page = new Template('index.php');
+      $page->render();
+      
 
-      $youtube = new Youtube('https://www.youtube.com/watch?v=EY9UOH64aZs');
+      //$youtube = new Youtube('https://www.youtube.com/watch?v=EY9UOH64aZs');
 
 
 

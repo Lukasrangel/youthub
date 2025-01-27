@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(to right, #982add 50%,#7524e5 100%);
+    top: 0;
+    border-bottom: #212121 4px solid;
+}
+
+header .title {
+    text-align: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 80px;
+}
+
+.title {
+    margin-bottom: 22px;
+}
+
+header nav {
+    width:100%;
+    display: flex;
+    background-color: #212121;
+    justify-content: space-between;
+}
+
+header nav .buttonLink {
+    width: 50%;
+    text-align: center;
+    padding: 4px;
+}
+
+.buttonLink-active {
+    border-bottom: 4px solid white;
+    transition: 0.8s;
+}
+
+header nav .buttonLink:first-child {
+    border-right: 2px white solid;
+}
+
+header nav .buttonLink:last-child {
+    border-left: 2px white solid;
+}
+
+
+header nav a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    
+}
+header p {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 18px;
+}
+
+
+.adsense {
+    width: 70%;
+    margin: 0 auto;
+    height: 140px;
+    background-color: aqua;
+    margin-top: 14px;
+
+}
+
+
+h2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 4px;
+    margin-bottom: 8px;
+}
+
+section.getThumb {
+    display: none;
+}
+
+section.downloader, section.getThumb {
+    text-align: center;
+    padding: 28px;
+}
+
+section.downloader input, section.getThumb input{
+    width: 60%;
+    font-size:medium;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    width: 68px;
+    height: 54px;
+    background-color: #212121;
+    color: white;
+    cursor: pointer;
+    font-family: fantasy;
+    margin: 18px;
+}
+
+.active {
+    background-color: #7524e5 !important;
+}
+
+.message {
+    width: 100%;
+    text-align: center;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 28px;
+}
+
+.submit input {
+    width: 40% !important;
+    background-color: #982add;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    height: 120px;
+    background-color: #757575;
+}
+
+footer p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .adsense {
+        width: 92%;
+    }   
+
+    section.downloader input {
+        width: 100%;
+    }
+
+    .submit input {
+        width: 60% !important;
+    }
+}
