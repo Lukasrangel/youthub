@@ -1,0 +1,17 @@
+{
+
+    "autoload":{
+        "psr-4":{
+            "classes\\" : "classes\\",
+            "vendor\\": "vendor\\",
+            "app\\Controllers\\" : "app\\Controllers\\"
+        }
+    },
+
+    "authors": [
+        {
+            "name": "ROX",
+            "email": "rox@tutanota.com"
+        }
+    ]
+}
