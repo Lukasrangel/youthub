@@ -12,12 +12,25 @@ class HomeController {
 
       $page = new Template('index.php');
       $page->render();
-      
 
-      //$youtube = new Youtube('https://www.youtube.com/watch?v=EY9UOH64aZs');
+    }
 
+    public function convert(){
 
+      $converType = $_POST['type'];
+      $url = $_POST['url'];
 
+      $youtHub = new Youtube;
+
+      $youtHub->setUrl($url);
+
+      if($converType == 'mp3') {
+        $youtHub->mp3();
+      }
+
+      if($converType == 'mp4') {
+        $youtHub->mp4();
+      }
     }
 
     
