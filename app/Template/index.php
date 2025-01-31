@@ -34,12 +34,13 @@
     
     <section class="downloader">
 
-        <form method="POST">
+        <form method="POST" action='convert'>
 
             <h2> Video or MP3 Download</h2>
 
-            <input id='URL' type="text" placeholder="Enter your youtube URL">
-
+            <input id='URL' name='url' type="text" placeholder="Enter your youtube URL">
+            <input type='hidden' name='type' value='mp3'>
+            
             <div class="buttons">
                 <div class="button-mp3">
                     <button id='button-mp3' > MP3 </button>
@@ -93,7 +94,7 @@
     </footer>
 </body>
 
-
+<script src=<?php echo DIR . "/app/Template/js/jquery.min.js" ?>></script>
 <script src=<?php echo DIR . "/app/Template/js/scripts.js"?>>
 </script>
 </html>

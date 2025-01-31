@@ -12,17 +12,15 @@ class HomeController {
 
       $page = new Template('index.php');
       $page->render();
-
+      
     }
 
-    public function convert(){
+    public function convert($converType, $url){
 
-      $converType = $_POST['type'];
-      $url = $_POST['url'];
-
-      $youtHub = new Youtube;
+      $youtHub = new Youtube();
 
       $youtHub->setUrl($url);
+
 
       if($converType == 'mp3') {
         $youtHub->mp3();

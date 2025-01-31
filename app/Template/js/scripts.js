@@ -82,7 +82,7 @@ buttonMP4.addEventListener('click', (e) => {
 
 submit.addEventListener('click', (e) => {
     e.preventDefault();
-    alert(link.value)
+    
     if(link.value == ''){
         message.style.color = 'red';
         message.innerHTML = "Insira um link do youtube!";  
@@ -97,20 +97,24 @@ submit.addEventListener('click', (e) => {
             typeConvert = 'mp3';
         } else {
             typeConvert = 'mp4';
+           
         }
 
         message.innerHTML = "";
+
+        parametros = {
+            format: typeConvert,
+            url: link.value
+          };
+          
         
-        fetch("http://127.0.0.1/youtHub/convert", {
+        $.ajax({
             method: "POST",
-            body: JSON.stringify({
-                url: link.value,
-                type: typeConvert
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-            });
+            url: "convert",
+            data: { url: link.value, format: typeConvert }
+        })
+
+        
 
     } else {
         message.style.color = 'red';
