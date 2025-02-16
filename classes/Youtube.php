@@ -10,28 +10,41 @@ class Youtube {
         $this->$url = $url;
     }
 
-    public function mp3() {
-        $command = "python " . DIR . "/bin/mp3.py" . escapeshellarg($this->url);
+    public function mp3($link) {
 
-        exec($command, $output, $status);
-
-        if ($status === 0) {
-            echo "OK!";
-        } else {
-            echo "Fail!";
+        echo $link;
+        try {
+            $command = "python bin/mp3.py" . $this->url; 
+            $output = shell_exec($command);
+        } catch(Exception $e) {
+            echo $e->getMessage();
         }
+        
+        $resultado['format'] = 'mp3';
+        preg_match('/ExtractAudio(.*)mp3/', $output, $output_array);
+        $file = explode('//',$output_array[0])[1];
+
+        $resultado['file'] = $file;
+        
+        echo json_encode($resultado);
     }
 
-    public function mp4() {
-        $command = "python " . DIR . "/bin/mp4.py" . escapeshellarg($this->url);
-
-        exec($command, $output, $status);
-
-        if ($status === 0) {
-            echo "OK!";
-        } else {
-            echo "Fail!";
+    public function mp4($link) {
+        
+        try {
+            $command = "python bin/mp4.py" . $this->url; 
+            $output = shell_exec($command);
+        } catch(Exception $e) {
+            echo $e->getMessage();
         }
+        
+        echo $output;
+        echo "[FORMATO] => MP4";
+        preg_match('/[ExtractAudio](.*)mp3/', $output, $output_array);
+        $file = explode('//',$output_array[0])[1];
+        echo $file;
+
+
     }
 
 

@@ -135,6 +135,14 @@ section.downloader input, section.getThumb input{
     cursor: pointer;
 }
 
+.submit a {
+    width: 40% !important;
+    background-color: #982add;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer
+}
+
 footer {
     width: 100%;
     height: 120px;
@@ -148,7 +156,86 @@ footer p {
     padding-top: 60px;
 }
 
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(000, 000, 000, .5);
+}
+.spinner-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+}
 
+.spinner-div p {
+    font-size: 22px;
+    font-family: serif;
+    background-color: #ccc;
+    margin-top: 8px;
+    margin-left: -130px;
+
+}
+
+.spinner {
+    animation: spin 1.25s linear infinite;
+}
+
+.path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash 1.25s ease-in-out infinite, colors 5s ease-in-out infinite;
+  }
+
+
+  .hidden {
+    display: none;
+  }
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  @keyframes colors {
+    0% {
+      stroke: #4285F4;
+    }
+    25% {
+      stroke: #DE3E35;
+    }
+    50% {
+      stroke: #F7C223;
+    }
+    75% {
+      stroke: #1B9A59;
+    }
+    100% {
+      stroke: #4285F4;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 187;
+    }
+    50% {
+      stroke-dashoffset: 46.75;
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: 187;
+      transform: rotate(450deg);
+    }
+  }
 @media screen and (max-width: 800px) {
 
     .adsense {

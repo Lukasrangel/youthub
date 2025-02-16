@@ -111,7 +111,24 @@ submit.addEventListener('click', (e) => {
         $.ajax({
             method: "POST",
             url: "convert",
-            data: { url: link.value, format: typeConvert }
+            data: { url: link.value, format: typeConvert },
+            beforeSend: () => {
+                $('.overflow').removeClass('hidden');
+                $('.spinner-div').removeClass('hidden');
+            },
+            success: (data) => {
+                $('.overflow').addClass('hidden');
+                $('.spinner-div').addClass('hidden');
+
+                response = $.parseJSON(data)
+                console.log(response.format)
+                console.log(response.file)
+
+                $('#url').value = "";
+                
+                $('.submit').html("<a href='http://127.0.0.1/yout/" + response.format + "/" + response.file + "' onclick='location.reload()' download>Download your file</a>")
+                
+            }
         })
 
         

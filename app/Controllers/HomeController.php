@@ -19,15 +19,12 @@ class HomeController {
 
       $youtHub = new Youtube();
 
-      $youtHub->setUrl($url);
-
-
       if($converType == 'mp3') {
-        $youtHub->mp3();
+        $youtHub->mp3($url);
       }
 
       if($converType == 'mp4') {
-        $youtHub->mp4();
+        $youtHub->mp4($url);
       }
     }
 

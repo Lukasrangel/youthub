@@ -23,8 +23,6 @@ Router::post('/convert', function() use ($homeController) {
     $converType = $_POST['format'];
     $link = $_POST['url'];
     
-    echo $link;
-    
     $homeController->convert($converType, $link);
 });
 

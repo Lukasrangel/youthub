@@ -64,7 +64,17 @@
 
     </section><!--downloader-->
 
+    <div class="overflow hidden"></div>
+    <div class="spinner-div hidden">
 
+
+        <svg class="spinner" height="64px" width="64px">
+        <circle class="path" cx="32" cy="32" fill="none" r="28" stroke-width="8"></circle>
+        </svg>
+
+        <p> Your video is being converted...</p>
+    </div><!--spinner-div-->
+    
     <section class="getThumb">
 
         <form method="POST">
