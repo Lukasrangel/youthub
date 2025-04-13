@@ -28,7 +28,16 @@ class HomeController {
       }
     }
 
-    
+    public function downloadThumb($link) {
+
+      $youtHub = new Youtube();
+      $youtHub->getThumb($link);
+    }
+
+    public function banner() {
+      $page = new Template('banner.html');
+      $page->render();
+    }
 }
 
 ?>

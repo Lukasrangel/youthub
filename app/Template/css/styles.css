@@ -30,7 +30,12 @@ header nav {
 header nav .buttonLink {
     width: 50%;
     text-align: center;
-    padding: 4px;
+    padding: 16px;
+}
+
+.buttonLink a {
+    width: 100%;
+    display: block;
 }
 
 .buttonLink-active {
@@ -140,7 +145,9 @@ section.downloader input, section.getThumb input{
     background-color: #982add;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    cursor: pointer
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px;
 }
 
 footer {
@@ -196,6 +203,33 @@ footer p {
   .hidden {
     display: none;
   }
+
+
+/* content banner pós */
+.content-banner-pos {
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:70%;
+    height: 80%;
+    background-color: red;
+}
+
+
+  /* banner pós conver */
+  .banner-pos {
+    margin: 0 auto;
+    margin-top:76px;
+    width: 50%;
+    border-radius: 15px;
+    border:2px solid #757575;
+    padding: 8px;
+    text-align: center;
+    align-items: center;
+  }
+
 @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -246,7 +280,15 @@ footer p {
         width: 100%;
     }
 
+    section.getThumb input {
+        width:100%;
+    }
+
     .submit input {
         width: 60% !important;
+    }
+
+    .banner-pos {
+        width: 90%;
     }
 }

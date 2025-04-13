@@ -4,17 +4,13 @@ namespace classes;
 
 class Youtube {
 
-    private $url;
-
-    public function setUrl($url) {
-        $this->$url = $url;
-    }
+    
 
     public function mp3($link) {
 
-        echo $link;
+        
         try {
-            $command = "python bin/mp3.py" . $this->url; 
+            $command = "python bin/mp3.py " . $link; 
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
@@ -27,36 +23,40 @@ class Youtube {
         $resultado['file'] = $file;
         
         echo json_encode($resultado);
+        
     }
 
     public function mp4($link) {
         
         try {
-            $command = "python bin/mp4.py" . $this->url; 
+            $command = "python bin/mp4.py " . $link; 
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
         }
         
-        echo $output;
-        echo "[FORMATO] => MP4";
-        preg_match('/[ExtractAudio](.*)mp3/', $output, $output_array);
-        $file = explode('//',$output_array[0])[1];
-        echo $file;
+        $resultado['format'] = 'mp4';
+        preg_match('/Merger(.*)"mp4\/\/(.*)"/', $output, $output_array);
+        
+        $resultado['file'] = $output_array[2];
+
+        echo json_encode($resultado);
 
 
     }
 
 
-    public function getThumb() {
-        $command = "yt-dlp -o thumbs/" . uniqid() . " " . escapeshellarg($this->url) . " --write-thumbnail --skip-download";
+    public function getThumb($link) {
+        $command = "yt-dlp -o thumbs/" . uniqid() . " " . escapeshellarg($link) . " --write-thumbnail --skip-download";
         
         exec($command, $output, $status);
        
         if ($status === 0) {
             echo "OK!";
+            var_dump($output);
         } else {
             echo "Fail!";
+            var_dump($output);
         }
     }
 
