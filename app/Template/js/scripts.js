@@ -1,3 +1,9 @@
+$(document).ready(function() {
+
+
+
+});
+
 // Botões da nav!
 
 youtHub = document.querySelector('#youtHub');
@@ -8,6 +14,19 @@ divThumbButton = document.querySelector('.thumbButton')
 
 sectionDownload = document.querySelector('section.downloader');
 sectionGetThumb = document.querySelector('section.getThumb');
+
+
+/* variaveis */
+
+let link = document.querySelector('#URL');
+let buttonMP3 = document.querySelector('#button-mp3');
+let buttonMP4 = document.querySelector('#button-mp4');
+let submitButton = document.querySelector('#submit');
+let submitThumb = document.querySelector('#getThumbsubmit');
+let ThumbLink = document.querySelector('#ThumbLink');
+let message = document.querySelector('.message p');
+let messageThumb = document.querySelector('.messageThumb p');
+
 
 function updateUrl(newUrl) {
     history.pushState(null, null, newUrl);
@@ -52,20 +71,6 @@ getThumb.addEventListener('click', (e) => {
 })
 
 
-
-/* 
-
-### variaveis */
-
-let link = document.querySelector('#URL');
-let buttonMP3 = document.querySelector('#button-mp3');
-let buttonMP4 = document.querySelector('#button-mp4');
-let submitButton = document.querySelector('#submit');
-let submitThumb = document.querySelector('#getThumbsubmit');
-let ThumbLink = document.querySelector('#ThumbLink');
-let message = document.querySelector('.message p');
-let messageThumb = document.querySelector('.messageThumb p');
-
 // Botões da página de download mp3 mp3 estilo!
 
 buttonMP3.addEventListener('click', (e) => {
@@ -83,8 +88,6 @@ buttonMP4.addEventListener('click', (e) => {
 })
 
 
-
-
 //carrega banner pos
 
 function bannerPix() {
@@ -94,16 +97,18 @@ function bannerPix() {
         method: 'GET',
         url: 'banner',
         success: (layout) => {
-
-            $('.overflow').removeClass('hidden');
-            $('.content-banner-pos').html(layout)
+         
+            $('.content-banner-pos').removeClass('hidden');
+            $('.content-banner-pos').html(layout);
+            $('.overflow').removeClass('hidden'); 
+            
+            
         }
     })
 
 }
 
 // envio form download 
-
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -150,7 +155,7 @@ submit.addEventListener('click', (e) => {
 
             },
             success: (data) => {
-                $('.overflow').addClass('hidden');
+                //$('.overflow').addClass('hidden');
                 $('.spinner-div').addClass('hidden');
 
                 response = $.parseJSON(data)
@@ -163,6 +168,10 @@ submit.addEventListener('click', (e) => {
                 
                 $('.downloadYourFile').html("<a href='http://127.0.0.1/yout/" + response.format + "/" + response.file + "' onclick='location.reload()' download>Download your file</a>")
                 
+            },
+            error: () => {
+                alert('Ocorreu algum erro, tente novamente');
+                window.location.reload(true);
             }
         })
 
@@ -208,5 +217,4 @@ submitThumb.addEventListener('click', function(e) {
     })
 })
 
-//eventos
-activePage();
+
