@@ -41,5 +41,7 @@ Router::post('/downloadThumb', function() use ($homeController) {
 
     $link = $_POST['link'];
     $homeController->downloadThumb($link);
-})
+});
+
+
 ?>

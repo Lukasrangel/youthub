@@ -153,6 +153,7 @@ section.downloader input, section.getThumb input{
 footer {
     width: 100%;
     height: 120px;
+    margin-top: 104px;
     background-color: #757575;
 }
 
@@ -214,11 +215,10 @@ footer p {
     transform: translate(-50%,-50%);
     width:70%;
     height: 80%;
-    background-color: red;
 }
 
 
-  /* banner pós conver */
+  /* banner pós convert */
   .banner-pos {
     margin: 0 auto;
     margin-top:76px;
@@ -228,6 +228,7 @@ footer p {
     padding: 8px;
     text-align: center;
     align-items: center;
+    background-color: white;
   }
 
 @keyframes spin {
