@@ -4,10 +4,16 @@ namespace classes;
 
 class Youtube {
 
+
+    private function explode($link) {
+        $url = explode('&',$link);
+        return $url[0];
+    }
     
 
     public function mp3($link) {
 
+        $link = $this->explode($link);
         
         try {
             $command = "python bin/mp3.py " . $link; 
@@ -27,6 +33,8 @@ class Youtube {
     }
 
     public function mp4($link) {
+        
+        $link = $this->explode($link);
         
         try {
             $command = "python bin/mp4.py " . $link; 
