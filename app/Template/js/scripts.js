@@ -90,7 +90,7 @@ buttonMP4.addEventListener('click', (e) => {
 
 //carrega banner pos
 
-function bannerPix() {
+function bannerPix(format, file) {
 
 
     $.ajax({
@@ -102,7 +102,7 @@ function bannerPix() {
             $('.content-banner-pos').html(layout);
             $('.overflow').removeClass('hidden'); 
             
-            
+            $('#downloadYourFile').html("<a href='http://127.0.0.1/yout/" + response.format + "/" + response.file + "' onclick='location.reload()' download>Download your file</a>")
         }
     })
 
@@ -163,9 +163,7 @@ submit.addEventListener('click', (e) => {
                 console.log(response.file)
 
 
-                bannerPix();
-                
-                $('.downloadYourFile').html("<a href='http://127.0.0.1/yout/" + response.format + "/" + response.file + "' onclick='location.reload()' download>Download your file</a>")
+                bannerPix(response.format, response.file );
                 
             },
             error: () => {
