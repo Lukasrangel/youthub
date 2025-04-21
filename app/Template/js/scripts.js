@@ -187,7 +187,6 @@ submitThumb.addEventListener('click', function(e) {
     e.preventDefault();
 
     if(ThumbLink.value == "") {
-        alert('not')
         messageThumb.style.color = 'red';
         messageThumb.innerHTML = "Insira um link do youtube!";
         return false;
@@ -208,7 +207,10 @@ submitThumb.addEventListener('click', function(e) {
 
             $('.spinner-div').addClass('hidden');
 
-            $('.downloadYourFile').html("<a href='http://127.0.0.1/yout/thumbs/"  + response.file + "' onclick='location.reload()' download>Download your file</a>")
+            response = $.parseJSON(data);
+            format = 'thumbs';
+
+            bannerPix(format, response.file);
 
         }
     })
