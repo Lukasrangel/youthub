@@ -162,7 +162,6 @@ submit.addEventListener('click', (e) => {
                 console.log(response.format)
                 console.log(response.file)
 
-                //$('#url').value = "";
 
                 bannerPix();
                 
