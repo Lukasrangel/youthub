@@ -6,6 +6,8 @@ $(document).ready(function() {
 
 // Botões da nav!
 
+DIR = 'http://127.0.0.1/yout/';
+
 youtHub = document.querySelector('#youtHub');
 getThumb = document.querySelector('#getThumb');
 
@@ -59,7 +61,7 @@ function bannerPix(format, file) {
             $('.content-banner-pos').html(layout);
             $('.overflow').removeClass('hidden'); 
             
-            $('#downloadYourFile').html("<a href='http://127.0.0.1/yout/" + format + "/" + file + "' onclick='location.reload()' download>Download your file</a>")
+            $('#downloadYourFile').html("<a href='" + DIR + format + "/" + file + "' onclick='location.reload()' download>Download your file</a>")
         }
     })
 
