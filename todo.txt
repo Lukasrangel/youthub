@@ -1,4 +1,7 @@
-( ) --> atualizar palavras chave
-( ) --> refatorar javascript
+subir vps
+instalar apache2 e ligar rewrite de módulo
 
+instalar python, yt_dlp e aria2
+
+colocad ads
 
