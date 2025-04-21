@@ -14,12 +14,7 @@ Router::get('/', function() use ($homeController) {
 });
 
 
-
 Router::get('/youtHub', function() use ($homeController) {
-    $homeController->index();
-});
-
-Router::get('/getThumb', function() use ($homeController) {
     $homeController->index();
 });
 
@@ -37,11 +32,7 @@ Router::get('/banner', function() use ($homeController) {
     $homeController->banner();
 });
 
-Router::post('/downloadThumb', function() use ($homeController) {
 
-    $link = $_POST['link'];
-    $homeController->downloadThumb($link);
-});
 
 
 ?>

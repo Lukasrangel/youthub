@@ -17,18 +17,9 @@
 <body>
 
     <header>
-        <h1 class="title"> YoutHubDownloader </h1>
+        <h1 style='margin-bottom:98px' class="title"> YoutHubDownloader </h1>
 
-        <nav>
-            <div class="downloadButton buttonLink buttonLink-active">
-                <a href="youtHub" onclick="event.preventDefault()" id="youtHub"> Download </a>
-            </div>
-            
-            <div class="thumbButton buttonLink">
-                <a href="getThumb" onclick="event.preventDefault()" id="getThumb"> Get Thumbnail </a>
-            </div>
-            
-        </nav>
+        
 
         <p> Download Youtube Vídeos on MP3 or MP4 And ThumbNails for free! </p>
     </header>
@@ -87,29 +78,6 @@
         <p class='message-downloader'> Your video is being converted...</p>
     </div><!--spinner-div-->
     
-    <section class="getThumb">
-
-        <form method="POST">
-
-            <h2> ThumbNail </h2>
-            <input id='ThumbLink' type="text" placeholder="Enter your youtube URL">
-
-
-            <br />
-            <br />
-            <div class="messageThumb">
-                <p> </p>
-            </div><!--message-->
-
-            
-            <div class="submit">
-                <input id="getThumbsubmit" type="submit"  value="Get Thumbnail!">
-            </div><!--submit-->
-        </form>
-
-
-    </section><!--ThumbNail -->
-   
 
 
     <footer>

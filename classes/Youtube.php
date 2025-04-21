@@ -54,23 +54,6 @@ class Youtube {
     }
 
 
-    public function getThumb($link) {
-        $fileName = uniqid();
-
-        $command = "yt-dlp -o thumbs/" . $fileName . " " . escapeshellarg($link) . " --write-thumbnail --skip-download";
-        
-        exec($command, $output, $status);
-       
-        if ($status === 0) {
-            $result['file'] = $fileName . '.webp';
-            echo json_encode($result);
-        } else {
-            echo "Fail!";
-            var_dump($output);
-        }
-    }
-
-
 }
 
 ?>
