@@ -8,7 +8,6 @@ def download_best_audio_as_mp3(video_url, save_path=save_path):
         'format': 'bestaudio/best',
         'noplaylist': True,
         'nocheckcertificate': True,
-        'call_home': False,
         'outtmpl': save_path + '/%(title)s.%(ext)s',  # Save path and file name
         'external_downloader': 'aria2c',  # Usar o aria2c como downloader externo
         'external_downloader_args': ['-x', '16', '-k', '1M'],
