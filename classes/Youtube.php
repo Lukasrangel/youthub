@@ -23,7 +23,7 @@ class Youtube {
         }
         
         $resultado['format'] = 'mp3';
-        preg_match('/ExtractAudio(.*)mp3/', $output, $output_array);
+        preg_match('/ExtractAudio(.*)m4a/', $output, $output_array);
         $file = explode('//',$output_array[0])[1];
 
         $resultado['file'] = $file;
