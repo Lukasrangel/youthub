@@ -3,8 +3,21 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url(Roboto.ttf);
+}
+
+.center {
+    margin-top: 70px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4%;
+    display: block;
+}
+
 header {
-    background: linear-gradient(to right, #982add 50%,#7524e5 100%);
+    background: linear-gradient(to right, #8b32e1 50%,#926bdc 100%);
     top: 0;
     border-bottom: #212121 4px solid;
 }
@@ -12,7 +25,7 @@ header {
 header .title {
     text-align: center;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     padding-top: 80px;
 }
 
@@ -31,6 +44,10 @@ header nav .buttonLink {
     width: 50%;
     text-align: center;
     padding: 16px;
+}
+
+p {
+    font-family: 'Roboto';
 }
 
 .buttonLink a {
@@ -62,7 +79,7 @@ header p {
     color: white;
     text-align: center;
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto';
     padding: 18px;
 }
 
@@ -78,9 +95,16 @@ header p {
 
 
 h2 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     padding: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-family: 'Roboto';
+    padding: 4px;
+    margin-top: 12px;
+    margin-bottom: 18px;
 }
 
 section.getThumb {
@@ -114,7 +138,7 @@ section.downloader input, section.getThumb input{
     background-color: #212121;
     color: white;
     cursor: pointer;
-    font-family: fantasy;
+    font-family: 'Roboto';
     margin: 18px;
 }
 
@@ -136,7 +160,7 @@ section.downloader input, section.getThumb input{
     width: 40% !important;
     background-color: #982add;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     cursor: pointer;
 }
 
@@ -144,7 +168,7 @@ section.downloader input, section.getThumb input{
     width: 40% !important;
     background-color: #982add;
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     cursor: pointer;
     text-decoration: none;
     padding: 8px;
@@ -158,7 +182,7 @@ footer {
 }
 
 footer p {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Roboto';
     color: white;
     text-align: center;
     padding-top: 60px;
@@ -182,7 +206,7 @@ footer p {
 
 .spinner-div p {
     font-size: 22px;
-    font-family: serif;
+    font-family: 'Roboto';
     background-color: #ccc;
     margin-top: 8px;
     margin-left: -130px;

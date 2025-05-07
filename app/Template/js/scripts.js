@@ -61,7 +61,9 @@ function bannerPix(format, file) {
             $('.content-banner-pos').html(layout);
             $('.overflow').removeClass('hidden'); 
             
-            $('#downloadYourFile').html("<a href='" + DIR + format + "/" + file + "' onclick='location.reload()' download>Download your file</a>")
+            $('#downloadYourFile').html("<a href='" + format + "/" + file + "' download onclick='location.reload()'> Download your file </a>")
+
+            $('#URL').html('');
         }
     })
 
@@ -106,11 +108,11 @@ submit.addEventListener('click', (e) => {
 
                 setTimeout(function() {
                     $('.message-downloader').html('Just a little more...')
-                }, 90000); 
+                }, 60000); 
 
                 setTimeout(function() {
                     $('.message-downloader').html('Your video is almost ready...')
-                }, 160000); 
+                }, 100000); 
 
             },
             success: (data) => {

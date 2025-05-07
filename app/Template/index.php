@@ -4,24 +4,22 @@
     <title>YoutHub</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Youtube mp3 & mp4 Downloader and ThumbNail Downloader!">
-    <meta name="keywords" content="youtube downloader, youtube mp3, youtube converter, donwload youtube videos, youtHub, thumbnail downloader">
+    <meta name="description" content="Youtube mp3 & mp4 Downloader! Faça download de vídeos e músicas do YouTube em MP4 ou MP3 de forma fácil, sem instalar nada. Totalmente grátis!">
+    <meta name="keywords" content="youtube downloader, youtube mp3, youtube converter, donwload youtube videos, youtHub,baixar vídeos do YouTube,converter vídeo YouTube para MP3 grátis,como baixar vídeo do YouTube MP4">
     <meta name="author" content="Revolta Cyb3rnetic4">
     <meta name="robots" content="index">
 
     <link rel="stylesheet" type="text/css" href=<?php echo DIR . "/app/Template/css/styles.css"?>>
-    <link rel="shortcut icon" href="youthub.ico" />
+    <link rel="shortcut icon" href="icon.ico" />
     
     
 </head>
 <body>
 
     <header>
-        <h1 style='margin-bottom:98px' class="title"> YoutHubDownloader </h1>
+        <h1 style='margin-bottom:98px' class="title"> YoutHubDownloader </h1>     
 
-        
-
-        <p> Download Youtube Vídeos on MP3 or MP4 And ThumbNails for free! </p>
+        <p> Download Youtube Vídeos on MP3 or MP4 for free! </p>
     </header>
 
     
@@ -34,12 +32,24 @@
         <h1> AdSense </h1>
 
     </section><!--adsense-->
+
+    <section class="text center">
+
+     <h2> Baixe Vídeos do YouTube de Forma Rápida e Fácil </h2>
+
+    <p> Quer salvar seus vídeos favoritos do YouTube para assistir offline? 
+        Nosso site oferece uma maneira simples, rápida e gratuita de baixar vídeos em alta qualidade. 
+        Basta colar o link do vídeo, escolher o formato desejado (MP4 ou MP3) e clicar em "Converter". 
+        Não é necessário instalar nada — tudo acontece direto no seu navegador.
+
+     <h3> Comece agora mesmo e tenha seus vídeos sempre à mão! </h3>
+    </section>
     
     <section class="downloader">
 
         <form method="POST" action='convert'>
 
-            <h2> Video or MP3 Download</h2>
+            <h3> Video or MP3 Download</h3>
 
             <input id='URL' name='url' type="text" placeholder="Enter your youtube URL">
             <input type='hidden' name='type' value='mp3'>
@@ -59,7 +69,7 @@
                 </div><!--message-->
 
                 <div class="submit">
-                    <input id="submit" type="submit"  value="Converter!">
+                    <input title='Download youtube vídeo' id="submit" type="submit"  value="Converter!">
                 </div><!--submit-->
 
             </div><!--buttons-->
