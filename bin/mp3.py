@@ -12,7 +12,7 @@ def download_best_audio_as_mp3(video_url, save_path=save_path):
         'writethumbnail': False,
         'outtmpl': save_path + '/%(title)s.%(ext)s',  # Save path and file name
         'external_downloader': 'aria2c',  # Usar o aria2c como downloader externo
-        'external_downloader_args': ['-x', '32', '-k', '1M', '-s', '32'],
+        'external_downloader_args': ['-x', '12', '-k', '1M', '-s', '12'],
         #'postprocessors': [{  # Post-process to convert to MP3
         #    'key': 'FFmpegExtractAudio',
         #    'preferredcodec': 'mp3',  # Convert to mp3
