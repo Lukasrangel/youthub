@@ -1,6 +1,8 @@
 subir vps
 instalar apache2 e ligar rewrite de módulo
 
+binário do yt-dlp: https://github.com/yt-dlp/yt-dlp/releases/download/2025.02.19/yt-dlp_linux
+
 instalar python, yt_dlp, aria2, ffmpeg
 
 ./yt-dlp2 -x --audio-format mp3 "https://www.youtube.com/watch?v=5e_cFiuGbgE"
