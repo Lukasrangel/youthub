@@ -1,7 +1,9 @@
 subir vps
 instalar apache2 e ligar rewrite de módulo
 
-instalar python, yt_dlp e aria2
+instalar python, yt_dlp, aria2, ffmpeg
+
+./yt-dlp2 -x --audio-format mp3 "https://www.youtube.com/watch?v=5e_cFiuGbgE"
 
 colocad ads
 
