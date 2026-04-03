@@ -9,6 +9,13 @@
     <meta name="author" content="Revolta Cyb3rnetic4">
     <meta name="robots" content="index">
 
+    <meta property="og:title" content="Converta Vídeos e áudios do Youtube">
+    <meta property="og:description" content="Baixe vídeos e áudios do YouTube, rápido e grátis.">
+    <meta property="og:image" content="<?php echo DIR?>/icon.ico">
+    <meta property="og:url" content="<?php echo DIR?>">
+    <meta property="og:type" content="website">
+
+
     <link rel="stylesheet" type="text/css" href=<?php echo DIR . "/app/Template/css/styles.css"?>>
     <link rel="shortcut icon" href="icon.ico" />
     
