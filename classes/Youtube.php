@@ -16,15 +16,20 @@ class Youtube {
         $link = $this->explode($link);
 
         try {
-            $command = "yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 " . $link;
+            $command = "/var/www/html/yout/bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 " . escapeshellarg($link);
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
         }
 
         $resultado['format'] = 'mp3';
-        preg_match('/\[ExtractAudio\] Destination:\s*mp3\/(.*?)\.mp3/', $output, $output_array);
-        $file = $output_array[1] . '.mp3';
+
+        if (preg_match('/mp3\/([^"\n]+\.mp3)/', $output, $output_array)) {
+                $file = $output_array[1];
+        } else {
+                $e->getMessage();
+        }
+        
 
         $resultado['file'] = $file;
 
@@ -37,19 +42,22 @@ class Youtube {
         $link = $this->explode($link);
 
         try {
-            $command = "yt-dlp -o 'mp4/%(title)s.%(ext)s' " . $link;
-            $output = shell_exec($command);
+                $command = "/var/www/html/yout/bin/yt-dlp -f 'bestvideo[height=1080]+bestaudio' --merge-output-format mp4 -o 'mp4/%(title)s.%(ext)s' " . escapeshellarg($link);
+                $output = shell_exec($command);
         } catch(Exception $e) {
-            echo $e->getMessage();
+                echo $e->getMessage();
         }
 
         $resultado['format'] = 'mp4';
-        preg_match('/\[Merger\] Merging formats into "mp4\/(.*?)\.mp4"/', $output, $output_array);
 
-        $resultado['file'] = $output_array[2];
+        if (preg_match('/mp4\/([^"\n]+\.mp4)/', $output, $output_array)) {
+                $resultado['file'] = $output_array[1];
+        } else {
+                echo $e->getMessage();
+        }
 
         echo json_encode($resultado);
-    }
+        }
 }
 
 ?>

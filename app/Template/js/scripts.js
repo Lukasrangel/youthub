@@ -79,8 +79,7 @@ submit.addEventListener('click', (e) => {
         return(1); 
     }
     
-    
-    
+
     if(buttonMP3.classList.contains('active') || buttonMP4.classList.contains('active')){
 
         if(buttonMP3.classList.contains('active')){
@@ -134,8 +133,6 @@ submit.addEventListener('click', (e) => {
                 window.location.reload(true);
             }
         })
-
-        
 
     } else {
         message.style.color = 'red';
