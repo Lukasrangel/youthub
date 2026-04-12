@@ -1,3 +1,4 @@
+
 <?php
 
 namespace classes;
@@ -16,7 +17,7 @@ class Youtube {
         $link = $this->explode($link);
 
         try {
-            $command = "/var/www/html/yout/bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 " . escapeshellarg($link);
+            $command = "/var/www/neotube/bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata " . escapeshellarg($link);
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
@@ -24,14 +25,24 @@ class Youtube {
 
         $resultado['format'] = 'mp3';
 
-        if (preg_match('/mp3\/([^"\n]+\.mp3)/', $output, $output_array)) {
-                $file = $output_array[1];
-        } else {
-                $e->getMessage();
+        $patterns = [
+                '/mp3\/([^"\n]+\.mp3)/',
+                '/^\[download\] (.+\.mp3) has already been downloaded/'
+        ];
+
+        foreach ($patterns as $pattern) {
+                if (preg_match($pattern, $output, $output_array)) {
+                        $file = $output_array[1];
+                        break;
+                }
         }
-        
+
+        if (is_null($file)){
+                echo $e->getMessage();
+        }
 
         $resultado['file'] = $file;
+
 
         echo json_encode($resultado);
 
@@ -42,7 +53,7 @@ class Youtube {
         $link = $this->explode($link);
 
         try {
-                $command = "/var/www/html/yout/bin/yt-dlp -f 'bestvideo[height=1080]+bestaudio' --merge-output-format mp4 -o 'mp4/%(title)s.%(ext)s' " . escapeshellarg($link);
+                $command = "/var/www/neotube/bin/yt-dlp -f 'bv*+ba/b' --merge-output-format mp4 -o 'mp4/%(title)s.%(ext)s' --embed-thumbnail " . escapeshellarg($link);
                 $output = shell_exec($command);
         } catch(Exception $e) {
                 echo $e->getMessage();
@@ -50,14 +61,27 @@ class Youtube {
 
         $resultado['format'] = 'mp4';
 
-        if (preg_match('/mp4\/([^"\n]+\.mp4)/', $output, $output_array)) {
-                $resultado['file'] = $output_array[1];
-        } else {
+        $patterns = [
+                '/Merging formats into "mp4\/([^"]+)"/',
+                '/^\[download\] (.+\.mp4) has already been downloaded/'
+        ];
+
+
+        foreach ($patterns as $pattern) {
+                if (preg_match($pattern, $output, $output_array)) {
+                        $file = $output_array[1];
+                        break;
+                }
+        }
+
+        if (is_null($file)){
                 echo $e->getMessage();
         }
 
-        echo json_encode($resultado);
-        }
+       $resultado['file'] = $file;
+
+       echo json_encode($resultado);
+       }
 }
 
 ?>
