@@ -73,10 +73,7 @@
 </section>
 
 
-<section class="adsense">
-        <h1> AdSense </h1>
 
-    </section><!--adsense-->
 
 <div class="overflow hidden"></div>
     <div class="spinner-div hidden">
@@ -96,13 +93,7 @@
 </script>
 </html>
                                                                                                                         
-┌──(root㉿kali)-[/var/…/html/yout/app/Template]
-└─# ls           
-banner.html  css  index.php  js
-                                                                                                                        
-┌──(root㉿kali)-[/var/…/html/yout/app/Template]
-┌──(root㉿kali)-[/var/…/html/yout/app/Template]
-└─# cat banner.html 
+
 <style>
 
 

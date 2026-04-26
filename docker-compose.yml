@@ -1,0 +1,22 @@
+services:
+    php_neotube:
+      build: .
+      container_name: php_neotube
+      read_only: true
+      tmpfs:
+        - /tmp:exec,mode=1777
+        - /run
+      ports:
+        - "127.0.0.1:9000:9000"
+
+      volumes:
+        - ./mp3/:/www/mp3:rw
+        - ./mp4:/www/mp4:rw
+
+
+      deploy:
+        resources:
+          limits:
+            cpus: '0.50'
+            memory: 256M
+      restart: always
