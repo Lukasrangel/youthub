@@ -18,7 +18,6 @@ Router::get('/youtHub', function() use ($homeController) {
     $homeController->index();
 });
 
-
 Router::post('/convert', function() use ($homeController) {
     $converType = $_POST['format'];
     $link = $_POST['url'];
