@@ -9,6 +9,8 @@
     <meta name="author" content="Revolta Cyb3rnetic4">
     <meta name="robots" content="index">
 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
     <meta property="og:title" content="Converta Vídeos e áudios do Youtube - NeoTube">
     <meta property="og:description" content="Autonomia digital exige responsabilidade. Construa. Use. Apoie.">
     <meta property="og:image" content="<?php echo DIR?>/logo.webp">
