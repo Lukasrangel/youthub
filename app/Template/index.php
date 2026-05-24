@@ -75,7 +75,7 @@
 <footer>
     <h3 class='cyber-quote'> Resista ao algoritmo </h3>
 
-    <p class='footer-left'> <a href='https://realidadedistopica.online'> Realidade Distopica Blog</a></p>
+    <p class='footer-left'> <a target="_blank" href='https://realidadedistopica.online'> Realidade Distopica Blog</a></p>
     <p class='footer-right'>Copy-Left </p>
 </footer>
 
