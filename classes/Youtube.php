@@ -14,9 +14,10 @@ class Youtube {
     public function mp3($link) {
 
         $link = $this->explode($link);
+        $file = null;
 
         try {
-            $command = "/www//bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata " . escapeshellarg($link);
+            $command = "/www/bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata " . escapeshellarg($link);
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
@@ -37,7 +38,14 @@ class Youtube {
         }
 
         if (is_null($file)){
-                echo $e->getMessage();
+                header('Content-Type: application/json');
+                
+                // Retorna o status de erro
+                echo json_encode([
+                        'status' => 'error',
+                        'message' => 'Falha ao processar o vídeo do YouTube. Tente novamente mais tarde ou avise @ sysadmin'
+                ]);
+                exit;
         }
 
         $resultado['file'] = $file;

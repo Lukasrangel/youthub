@@ -128,9 +128,12 @@ submit.addEventListener('click', (e) => {
                 $('#URL').value = '';
                 
             },
-            error: () => {
-                alert('Ocorreu algum erro, tente novamente');
-                window.location.reload(true);
+            error: (xhr, status, error) => {
+                $('.spinner-div').addClass('hidden');
+                $('.overflow').addClass('hidden'); // Destrava a tela caso dê erro crítico
+                
+                alert("Falha ao processar o vídeo do YouTube. Tente novamente mais tarde ou avise @ sysadmin");
+                window.location.reload();
             }
         })
 
