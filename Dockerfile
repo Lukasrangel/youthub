@@ -26,6 +26,8 @@ WORKDIR /www
 RUN chown www-data:www-data /www
 COPY --chown=www-data:www-data . /www/
 
+RUN chown -R www-data:www-data /www
+
 EXPOSE 9000
 USER www-data
 CMD ["php-fpm"]
