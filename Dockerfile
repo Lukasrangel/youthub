@@ -14,7 +14,8 @@ RUN apk add --no-cache \
 RUN docker-php-ext-install \
     intl \
     zip \
-    opcache
+    opcache \
+    chmod -R 755 /www/bin/yt-dlp
 
 WORKDIR /www
 RUN chown www-data:www-data /www

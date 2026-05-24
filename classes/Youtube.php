@@ -16,7 +16,7 @@ class Youtube {
         $link = $this->explode($link);
 
         try {
-            $command = "/var/www/neotube/bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata " . escapeshellarg($link);
+            $command = "/www//bin/yt-dlp -o 'mp3/%(title)s.%(ext)s' -x --audio-format mp3 --audio-quality 0 --embed-thumbnail --add-metadata " . escapeshellarg($link);
             $output = shell_exec($command);
         } catch(Exception $e) {
             echo $e->getMessage();
