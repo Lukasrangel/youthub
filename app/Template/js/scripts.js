@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 // Botões da nav!
 
-DIR = 'http://127.0.0.1/yout/';
+DIR = window.location.origin;
 
 youtHub = document.querySelector('#youtHub');
 getThumb = document.querySelector('#getThumb');
