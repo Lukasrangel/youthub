@@ -58,9 +58,10 @@ class Youtube {
     public function mp4($link) {
 
         $link = $this->explode($link);
+        $file = null;
 
         try {
-                $command = "yt-dlp --extractor-args youtube:player-client=android,ios -f 'bv*+ba/b' --merge-output-format mp4 -o 'mp4/%(title)s.%(ext)s' --embed-thumbnail " . escapeshellarg($link);
+                $command = "yt-dlp --extractor-args youtube:player-client=android,ios -f 'bv*+ba/b' --recode-video mp4 -o 'mp4/%(title)s.%(ext)s' --embed-thumbnail  " . escapeshellarg($link);
                 $output = shell_exec($command);
         } catch(Exception $e) {
                 echo $e->getMessage();
@@ -69,7 +70,7 @@ class Youtube {
         $resultado['format'] = 'mp4';
 
         $patterns = [
-                '/Merging formats into "mp4\/([^"]+)"/',
+                '/\[download\] Destination: mp4\/(.+)/',
                 '/^\[download\] (.+\.mp4) has already been downloaded/'
         ];
 
@@ -82,7 +83,14 @@ class Youtube {
         }
 
         if (is_null($file)){
-                echo $e->getMessage();
+                header('Content-Type: application/json');
+                
+                // Retorna o status de erro
+                echo json_encode([
+                        'status' => 'error',
+                        'message' => 'Falha ao processar o vídeo do YouTube. Tente novamente mais tarde ou avise @ sysadmin'
+                ]);
+                exit;
         }
 
        $resultado['file'] = $file;

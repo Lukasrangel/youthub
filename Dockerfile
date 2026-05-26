@@ -7,6 +7,7 @@ RUN deluser www-data && \
 
 RUN apk add --no-cache \
     ffmpeg \
+    atomicparsley \
     icu-dev \
     libzip-dev \
     zlib-dev \
